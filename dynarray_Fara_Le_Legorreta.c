@@ -35,8 +35,8 @@ void test();
 // Main function
 int main() {
 	D = malloc(sizeof(struct dynArray));
-	assert(D);
- 	init(4);
+	assert(D); // checks if the condition is null or not. If null stop program, else continue.
+ 	init(4); // This is used to create the array
 	test();
 	cleanup();
 	disp();
