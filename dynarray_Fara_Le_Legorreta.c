@@ -30,7 +30,7 @@ void _resize(int);
 void test();
 void disp();
 
-
+// Main function
 int main() {
 	D = malloc(sizeof(struct dynArray));
 	assert(D);
@@ -42,15 +42,16 @@ int main() {
 	return 0;
 }
 
-
+// Initialize dynamic array. This is like a constructor.
 void init(int c) {
-	assert(c);
+    assert(c);
 	D->capacity = c;
 	D->size = 0;
 	D->data = malloc(D->capacity * sizeof(int));
 }
 
-
+// Free all the data from the heap.
+// Set size and capacity to 0.
 void cleanup() {
 	assert(D->data);
 	free(D->data);
