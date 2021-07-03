@@ -2,25 +2,27 @@
 #include <stdlib.h>
 #include <assert.h>
 
-struct student {
-char* name;
-int points;
-};
-
+// Struct for the dynamic array
 struct dynArray {
-void** data;
-int size;
-int capacity;
+    void** data;
+    int size;
+    int capacity;
 };
 
+// Struct for students.
+struct student {
+    char* name;
+    int points;
+};
 
-
+// make the struct pointer global.
 struct dynArray* D;
 
-void add(int);
-int get(int);
-void set(int, int);
-void insert(int, int);
+// Define the function prototypes.
+void add(void*);
+void* get(int);
+void set(void*, int);
+void insert(void*, int);
 void delete(int);
 void init(int);
 void cleanup();
