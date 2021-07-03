@@ -37,11 +37,19 @@ int main() {
 	D = malloc(sizeof(struct dynArray));
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
-	test();
+	//test();
 	cleanup();
-	disp();
+	//disp();
 	free(D);
 	return 0;
+}
+
+// Initialize dynamic array. This is like a constructor.
+void init(int c) {
+    assert(c);
+	D->capacity = c;
+	D->size = 0;
+	D->data = malloc(D->capacity * sizeof(struct student*));
 }
 
 void add(void* value) { // Is this parameter correctly written?
@@ -50,14 +58,6 @@ void add(void* value) { // Is this parameter correctly written?
 	}
 	D->data[D->size] = value;
 	D->size++;
-}
-
-// Initialize dynamic array. This is like a constructor.
-void init(int c) {
-    assert(c);
-	D->capacity = c;
-	D->size = 0;
-	D->data = malloc(D->capacity * sizeof(int));
 }
 
 void* get(int index) {
