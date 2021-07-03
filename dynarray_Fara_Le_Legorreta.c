@@ -13,11 +13,7 @@ int size;
 int capacity;
 };
 
-struct dynArray {
-	int* data;
-	int size;
-	int capacity;
-};
+
 
 struct dynArray* D;
 
