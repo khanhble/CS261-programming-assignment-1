@@ -27,6 +27,8 @@ void delete(int);
 void _resize(int);
 void insert(void*, int); // this one was implemented the same way.
 
+void createstudentpointers(int);
+
 // The bottom ones I haven't modified yet
 void cleanup();
 void disp();
@@ -37,7 +39,7 @@ int main() {
 	D = malloc(sizeof(struct dynArray));
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
-	//test();
+	test();
 	cleanup();
 	//disp();
 	free(D);
@@ -128,12 +130,26 @@ void disp() {
 	printf("capacity = %d, size = %d\n", D->capacity, D->size);
 }
 
+void createstudentpointers(int c){
+    // This function creates an array of student pointers.
+    // The array is of size c.
+    struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
+    for (int i=0; i <D->capacity; i++){
+        // put the student pointers in.
+        printf("index: %d\n", i);
+
+    }
+
+}
+
 
 void test() {
 	disp();
 	// The parameters to add should be void*.
+	// type arrayName [ arraySize ];
+	createstudentpointers(D->capacity);
 
-	add(); add(); add(); disp();
+	//add(); add(); add(); disp();
 	add(40); disp();
 	add(50); add(60);
 	insert(15, 1); disp();
