@@ -131,7 +131,9 @@ void disp() {
 
 void test() {
 	disp();
-	add(10); add(20); add(30); disp();
+	// The parameters to add should be void*.
+
+	add(); add(); add(); disp();
 	add(40); disp();
 	add(50); add(60);
 	insert(15, 1); disp();
