@@ -19,17 +19,18 @@ struct student {
 struct dynArray* D;
 
 // Define the function prototypes.
-void add(void*);
-void* get(int);
-void set(void*, int);
-void insert(void*, int);
-void delete(int);
+void add(void*); // Is this parameter implemented correctly?
 void init(int);
+void* get(int);
+void set(void*, int); // this one was implemented the same way.
+void delete(int);
 void _resize(int);
+void insert(void*, int); // this one was implemented the same way.
 
+// The bottom ones I haven't modified yet
 void cleanup();
-void test();
 void disp();
+void test();
 
 // Main function
 int main() {
@@ -43,7 +44,7 @@ int main() {
 	return 0;
 }
 
-void add(void*) {
+void add(void* value) { // Is this parameter correctly written?
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
 	}
@@ -59,13 +60,13 @@ void init(int c) {
 	D->data = malloc(D->capacity * sizeof(int));
 }
 
-int get(int index) {
+void* get(int index) {
 	assert(index >= 0);
 	assert(index < D->size);
 	return D->data[index];
 }
 
-void set(int value, int index) {
+void set(void* value, int index) {
 	assert(index >= 0);
 	assert(index < D->size);
 	D->data[index] = value;
@@ -94,8 +95,7 @@ void _resize(int c) {
 	D->data = newdata;
 }
 
-
-void insert(int value, int index) {
+void insert(void* value, int index) {
 	assert(index >= 0);
 	assert(index < D->size);
 	int i;
@@ -109,7 +109,6 @@ void insert(int value, int index) {
 	D->size++;
 }
 
-
 // Free all the data from the heap.
 // Set size and capacity to 0.
 void cleanup() {
@@ -119,7 +118,6 @@ void cleanup() {
 	D->size = 0;
 	D->capacity = 0;
 }
-
 
 void disp() {
 	int i;
