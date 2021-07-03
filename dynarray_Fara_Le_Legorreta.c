@@ -22,7 +22,7 @@ struct dynArray* D;
 struct student* array_of_pointers[];
 // array_of_pointers is an array with pointers and each of these
 // pointers will point to a student struct in the heap.
-
+// Should array_of_pointers be renamed array_of_stu_ptrs?
 
 
 // Define the function prototypes.
