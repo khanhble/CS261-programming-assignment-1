@@ -25,8 +25,9 @@ void set(void*, int);
 void insert(void*, int);
 void delete(int);
 void init(int);
-void cleanup();
 void _resize(int);
+
+void cleanup();
 void test();
 void disp();
 
@@ -42,6 +43,14 @@ int main() {
 	return 0;
 }
 
+void add(void*) {
+	if (D->size == D->capacity) {
+		_resize(D->capacity*2);
+	}
+	D->data[D->size] = value;
+	D->size++;
+}
+
 // Initialize dynamic array. This is like a constructor.
 void init(int c) {
     assert(c);
@@ -50,30 +59,17 @@ void init(int c) {
 	D->data = malloc(D->capacity * sizeof(int));
 }
 
-// Free all the data from the heap.
-// Set size and capacity to 0.
-void cleanup() {
-	assert(D->data);
-	free(D->data);
-	D->data = NULL;
-	D->size = 0;
-	D->capacity = 0;
-}
-
-
 int get(int index) {
 	assert(index >= 0);
 	assert(index < D->size);
 	return D->data[index];
 }
 
-
 void set(int value, int index) {
 	assert(index >= 0);
 	assert(index < D->size);
 	D->data[index] = value;
 }
-
 
 void delete(int index) {
 	assert(index >= 0);
@@ -83,15 +79,6 @@ void delete(int index) {
 		D->data[i-1] = D->data[i];
 	}
 	D->size--;
-}
-
-
-void add(int value) {
-	if (D->size == D->capacity) {
-		_resize(D->capacity*2);
-	}
-	D->data[D->size] = value;
-	D->size++;
 }
 
 
@@ -120,6 +107,17 @@ void insert(int value, int index) {
 	}
 	D->data[index] = value;
 	D->size++;
+}
+
+
+// Free all the data from the heap.
+// Set size and capacity to 0.
+void cleanup() {
+	assert(D->data);
+	free(D->data);
+	D->data = NULL;
+	D->size = 0;
+	D->capacity = 0;
 }
 
 
