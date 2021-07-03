@@ -17,7 +17,9 @@ struct student {
 
 // make the struct pointer global.
 struct dynArray* D;
-// Make the array of pointers to students global
+// Make the array of pointers to students global.
+// Just declare it here.
+struct student* array_of_pointers[];
 
 
 // Define the function prototypes.
