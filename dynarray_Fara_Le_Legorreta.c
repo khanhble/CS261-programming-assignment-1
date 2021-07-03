@@ -27,7 +27,7 @@ void delete(int);
 void _resize(int);
 void insert(void*, int); // this one was implemented the same way.
 
-void createstudentpointers(int);
+void create_student_pointers(int);
 
 // The bottom ones I haven't modified yet
 void cleanup();
@@ -130,18 +130,17 @@ void disp() {
 	printf("capacity = %d, size = %d\n", D->capacity, D->size);
 }
 
-void createstudentpointers(int c){
+void create_student_pointers(int c){
     // This function creates an array of student pointers.
     // The array is of size c.
     // Should I put this in the heap?
     // D = malloc(sizeof(struct dynArray));
     struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
-    for (int i=0; i <D->capacity; i++){
+    for (int i=0; i <D->capacity; i++) {
         // put the student pointers in.
         //printf("index: %d\n", i);
         // initalize the student.
         student_pointers[i] = struct student; // set to regular student?
-
     }
 
 }
@@ -151,7 +150,7 @@ void test() {
 	disp();
 	// The parameters to add should be void*.
 	// type arrayName [ arraySize ];
-	createstudentpointers(D->capacity);
+	create_student_pointers(D->capacity);
 
 	//add(); add(); add(); disp();
 	add(40); disp();
