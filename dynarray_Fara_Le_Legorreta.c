@@ -17,6 +17,8 @@ struct student {
 
 // make the struct pointer global.
 struct dynArray* D;
+// Make the array of pointers to students global
+
 
 // Define the function prototypes.
 void add(void*); // Is this parameter implemented correctly?
@@ -39,7 +41,7 @@ int main() {
 	D = malloc(sizeof(struct dynArray));
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
-	test();
+	//test();
 	cleanup();
 	//disp();
 	free(D);
@@ -140,7 +142,7 @@ void create_student_pointers(int c){
         // put the student pointers in.
         //printf("index: %d\n", i);
         // initalize the student.
-        student_pointers[i] = struct student; // set to regular student?
+        //student_pointers[i] = struct student; // set to regular student?
     }
 
 }
