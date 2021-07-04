@@ -93,6 +93,8 @@ void delete(int index) {
 void _resize(int c) {
 	int i;
 	int* newdata = malloc(c * sizeof(int));
+	// dump question but since data's type is void** should it be void** newdata = malloc(c*sizeof(int)) I did it for my program and it doesn't show any error message about it also
+	
 	assert(newdata);
 	D->capacity = c;
 	for (i=0; i<D->size; i++) {
