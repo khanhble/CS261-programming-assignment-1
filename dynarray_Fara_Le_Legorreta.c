@@ -140,19 +140,21 @@ void create_student_pointers(int c){
     // The array is of size c.
     // Should I put this in the heap?
     // D = malloc(sizeof(struct dynArray));
-    struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
+    //struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
 
     // create some students
-    student a_student;
+    struct student a_student;
     a_student.name = "Name";
     a_student.points = 10;
 
+    //student_pointer[0] = &a_student;
 
     for (int i=0; i <D->capacity; i++) {
         // put the student pointers in.
         //printf("index: %d\n", i);
         // initalize the student.
-        student_pointers[i] = array_of_pointers[i]; // set to regular student?
+        //student_pointers[i] = array_of_pointers[i]; // set to regular student?
+
     }
 
 }
