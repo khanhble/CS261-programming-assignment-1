@@ -33,9 +33,7 @@ void set(void*, int); // this one was implemented the same way.
 void delete(int);
 void _resize(int);
 void insert(void*, int); // this one was implemented the same way.
-
 void create_student_pointers(int);
-
 // The bottom ones I haven't modified yet
 void cleanup();
 void disp();
@@ -46,7 +44,7 @@ int main() {
 	D = malloc(sizeof(struct dynArray));
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
-	//test();
+	test();
 	cleanup();
 	//disp();
 	free(D);
@@ -143,11 +141,18 @@ void create_student_pointers(int c){
     // Should I put this in the heap?
     // D = malloc(sizeof(struct dynArray));
     struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
+
+    // create some students
+    student a_student;
+    a_student.name = "Name";
+    a_student.points = 10;
+
+
     for (int i=0; i <D->capacity; i++) {
         // put the student pointers in.
         //printf("index: %d\n", i);
         // initalize the student.
-        //student_pointers[i] = struct student; // set to regular student?
+        student_pointers[i] = array_of_pointers[i]; // set to regular student?
     }
 
 }
@@ -160,11 +165,11 @@ void test() {
 	create_student_pointers(D->capacity);
 
 	//add(); add(); add(); disp();
-	add(40); disp();
+/*	add(40); disp();
 	add(50); add(60);
 	insert(15, 1); disp();
 	insert(25, 3); disp();
 	insert(35, 5); disp();
-	add(70); disp();
-	delete(0); disp();
+	add(70); disp();*/
+	delete(0); //disp();
 }
